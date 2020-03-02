@@ -33,7 +33,7 @@ func calcExpectedThreeSum(nums []int) map[[3]int]bool {
 }
 
 func TestThreeSum(t *testing.T) {
-	nums := []int{-1, 0, 1, 2, -1, -4}
+	nums := []int{-1, 0, 1, 2, -1, -4, -3}
 
 	expected := calcExpectedThreeSum(nums)
 	result := ThreeSum(nums)
@@ -50,5 +50,13 @@ func TestThreeSum(t *testing.T) {
 		if _, ok := expected[ar]; !ok {
 			t.Error("wrong answer:", sl)
 		}
+	}
+	t.Log("Result: ", result, "Expected:", expected)
+}
+
+func BenchmarkThreeSum(b *testing.B) {
+	nums := []int{-1, 0, 1, 2, -1, -4, -3}
+	for i := 0; i < b.N; i++ {
+		ThreeSum(nums)
 	}
 }
