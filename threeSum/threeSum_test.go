@@ -23,12 +23,6 @@ func calcExpectedThreeSum(nums []int) map[[3]int]bool {
 			}
 		}
 	}
-	// res := make([][]int, len(uniq))
-	// i := 0
-	// for k := range uniq {
-	// 	res[i] = []int{k[0], k[1], k[2]}
-	// 	i++
-	// }
 	return uniq
 }
 
